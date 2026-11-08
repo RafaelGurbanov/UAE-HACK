@@ -1,0 +1,242 @@
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource/jetbrains-mono/400.css';
+@import 'tailwindcss';
+@import './tokens.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Tokens -> Tailwind utilities (bg-card, text-mut, border-line, text-teal-ink, …) */
+@theme inline {
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Instrument Sans Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-card: var(--card);
+  --color-card-strong: var(--card-strong);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-tx: var(--tx);
+  --color-mut: var(--mut);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --color-vio: var(--vio);
+  --color-red: var(--red);
+  --color-amb: var(--amb);
+  --color-blu: var(--blu);
+  --color-teal-ink: var(--teal-ink);
+  --color-gold-ink: var(--gold-ink);
+  --color-amb-ink: var(--amb-ink);
+  --color-blu-ink: var(--blu-ink);
+  --color-red-ink: var(--red-ink);
+  --color-gold-btn: var(--gold-btn);
+  --color-gold-btn-tx: var(--gold-btn-tx);
+
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+  --shadow-glow-vio: var(--glow-vio);
+  --shadow-glow-gold: var(--glow-gold);
+  --shadow-glow-teal: var(--glow-teal);
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--tx);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3 {
+    font-family: var(--font-display), 'Noto Naskh Arabic', 'Geeza Pro', 'Segoe UI', serif;
+    letter-spacing: 0;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--vio) 35%, transparent);
+  }
+}
+
+@layer components {
+  .aurora {
+    background:
+      radial-gradient(
+        60% 50% at 0% 0%,
+        color-mix(in srgb, var(--vio) 28%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        55% 45% at 100% 0%,
+        color-mix(in srgb, var(--teal) 22%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        70% 45% at 50% 100%,
+        color-mix(in srgb, var(--gold) 20%, transparent),
+        transparent 70%
+      ),
+      var(--bg);
+    background-attachment: fixed;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+  }
+  .pill {
+    border-radius: var(--radius-pill);
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: var(--radius-pill);
+    background: var(--gold-btn);
+    color: var(--gold-btn-tx);
+    font-weight: 600;
+    padding: 0.55rem 1.15rem;
+    transition:
+      filter 0.15s,
+      transform 0.15s;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.06);
+  }
+  .btn-primary:active {
+    transform: translateY(1px);
+  }
+  .btn-primary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line);
+    padding: 0.4rem 0.9rem;
+    color: var(--mut);
+    transition:
+      color 0.15s,
+      border-color 0.15s;
+  }
+  .btn-ghost:hover {
+    color: var(--tx);
+    border-color: var(--line-strong);
+  }
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--skeleton-a) 0%,
+      var(--skeleton-b) 50%,
+      var(--skeleton-a) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+    border-radius: 8px;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Pipeline pulse: logical property so it travels right-to-left in Arabic. */
+.pipeline-pulse {
+  animation: pipeline-travel 3.2s linear infinite;
+  inset-inline-start: 0;
+}
+@keyframes pipeline-travel {
+  0% {
+    inset-inline-start: 0;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    inset-inline-start: 100%;
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pipeline-pulse {
+    display: none;
+  }
+}
+
+/* Citation drawer: slides in from the inline end (right in LTR, left in RTL). */
+dialog.drawer[open] {
+  animation: drawer-in 0.24s ease-out;
+}
+[dir='rtl'] dialog.drawer[open] {
+  animation-name: drawer-in-rtl;
+}
+dialog.drawer::backdrop {
+  animation: fade-in 0.2s ease-out;
+}
+@keyframes drawer-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes drawer-in-rtl {
+  from {
+    transform: translateX(-24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

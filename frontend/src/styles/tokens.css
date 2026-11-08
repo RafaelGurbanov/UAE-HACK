@@ -1,0 +1,79 @@
+/*
+ * Design tokens: values from docs/prototype/tokens.md (project owner).
+ * Base tokens use the owner's names; derived tokens are marked.
+ */
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #070b14;
+  --bg2: #0d1424;
+  --card: rgba(255, 255, 255, 0.05);
+  --line: rgba(255, 255, 255, 0.12);
+  --tx: #ece6d8;
+  --mut: #9aa3b5;
+  --gold: #e8b04a;
+  --teal: #3dd6c3;
+  --vio: #8b7bff;
+  --red: #ff6b5e;
+  --amb: #f2b34a;
+  --blu: #5aa2ff;
+
+  /* derived */
+  --teal-ink: var(--teal);
+  --gold-ink: var(--gold);
+  --amb-ink: var(--amb);
+  --blu-ink: var(--blu);
+  --red-ink: var(--red);
+  --gold-btn: var(--gold);
+  --gold-btn-tx: #070b14;
+  --card-strong: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --nav-bg: color-mix(in srgb, var(--bg) 72%, transparent);
+  --skeleton-a: rgba(255, 255, 255, 0.04);
+  --skeleton-b: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f2e9;
+  --bg2: #ebe5d6;
+  --card: rgba(255, 255, 255, 0.7);
+  --line: rgba(20, 30, 50, 0.14);
+  --tx: #1a2133;
+  --mut: #5b6478;
+  --gold: #9a6a10;
+  --teal: #0b8a7b;
+  --vio: #5a49d6;
+  --red: #c93a2c;
+  --amb: #a86d00;
+  --blu: #2a6fd0;
+
+  /* derived: AA text variants (see tokens.md) */
+  --teal-ink: #097266;
+  --gold-ink: #875d0e;
+  --amb-ink: #8d5b00;
+  --blu-ink: #2563bb;
+  --red-ink: #ba3528;
+  --gold-btn: #e8b04a;
+  --gold-btn-tx: #1a2133;
+  --card-strong: rgba(255, 255, 255, 0.92);
+  --line-strong: rgba(20, 30, 50, 0.28);
+  --nav-bg: color-mix(in srgb, var(--bg) 78%, transparent);
+  --skeleton-a: rgba(20, 30, 50, 0.05);
+  --skeleton-b: rgba(20, 30, 50, 0.11);
+}
+
+:root {
+  --radius-card: 18px;
+  --radius-pill: 99px;
+  --blur: 14px;
+  --glow-vio:
+    0 0 0 1px color-mix(in srgb, var(--vio) 55%, transparent),
+    0 0 28px -4px color-mix(in srgb, var(--vio) 55%, transparent);
+  --glow-gold:
+    0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent),
+    0 0 22px -2px color-mix(in srgb, var(--gold) 60%, transparent);
+  --glow-teal:
+    0 0 0 1px color-mix(in srgb, var(--teal) 45%, transparent),
+    0 0 18px -4px color-mix(in srgb, var(--teal) 50%, transparent);
+}

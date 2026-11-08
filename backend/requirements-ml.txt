@@ -1,0 +1,7 @@
+# Full live stack: API + retrieval. Install with:  pip install -r requirements-ml.txt
+-r requirements.txt
+chromadb>=0.5,<2
+rank-bm25>=0.2.2
+sentence-transformers>=3.0     # BAAI/bge-m3 embeddings + BAAI/bge-reranker-v2-m3 (pulls PyTorch; CPU is fine)
+pymupdf>=1.24                  # PDF text extraction
+beautifulsoup4>=4.12           # HTML legislation pages

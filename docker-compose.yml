@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: { context: ./backend, args: { REQS: requirements-ml.txt } }
+    env_file: ./.env
+    environment:
+      KB_DIR: /srv/kb
+      INDEX_DIR: /srv/kb/index/chroma
+      SCENARIOS_DIR: /srv/scenarios
+      AUDIT_LOG_PATH: /srv/data/audit.jsonl
+      HF_HOME: /srv/hf
+    volumes:
+      - ./kb:/srv/kb
+      - ./scenarios:/srv/scenarios:ro
+      - backend-data:/srv/data
+      - hf-cache:/srv/hf        # bge-m3 / reranker downloads survive rebuilds
+    ports: ["8000:8000"]
+  frontend:
+    build:
+      context: ./frontend
+      args: { VITE_API_URL: "http://localhost:8000", VITE_MOCK: "false" }
+    ports: ["5173:80"]
+    depends_on: [backend]
+volumes:
+  backend-data:
+  hf-cache:

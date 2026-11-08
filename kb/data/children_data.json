@@ -1,0 +1,207 @@
+[
+  {
+    "id": "children-data-consent",
+    "topic": "Children's data and consent",
+    "keywords": {
+      "en": [
+        "consent",
+        "parental consent",
+        "guardian consent",
+        "verifiable consent",
+        "child",
+        "children",
+        "minor",
+        "student",
+        "personal data",
+        "process",
+        "processing",
+        "collect",
+        "collection",
+        "permission",
+        "parents",
+        "child's data"
+      ],
+      "ar": [
+        "الموافقة",
+        "موافقة",
+        "موافقة ولي الأمر",
+        "إذن الوالدين",
+        "إذن",
+        "الوالدين",
+        "ولي الأمر",
+        "الطفل",
+        "الأطفال",
+        "طفل",
+        "قاصر",
+        "طالب",
+        "البيانات الشخصية",
+        "بيانات الطفل",
+        "معالجة",
+        "جمع البيانات",
+        "معالجة البيانات"
+      ],
+      "az": [
+        "razılıq",
+        "razılığı",
+        "valideyn razılığı",
+        "icazə",
+        "valideyn",
+        "valideynlər",
+        "uşaq",
+        "uşağın",
+        "uşaqların",
+        "azyaşlı",
+        "şagird",
+        "şəxsi məlumat",
+        "şəxsi məlumatlar",
+        "məlumatlarını",
+        "emal",
+        "emal etmək",
+        "toplamaq"
+      ]
+    },
+    "question": "What consent is required to process a child's personal data?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: before the smart pen collects or processes a child's handwriting data, obtain specific, informed and recorded consent from the parent or legal guardian, explain the purpose in plain language, and offer an easy way to withdraw consent. Processing should stop and data be handled under the retention rules if consent is withdrawn.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "SRC",
+      "PP",
+      "D"
+    ],
+    "readiness_dimensions": [
+      "human_interaction_supervision",
+      "ai_policy_implementation"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  },
+  {
+    "id": "purpose-limitation",
+    "topic": "Purpose limitation",
+    "keywords": {
+      "en": [
+        "purpose limitation",
+        "purpose",
+        "secondary use",
+        "reuse",
+        "use data for other purposes",
+        "repurpose",
+        "only for screening",
+        "personal data",
+        "handwriting data"
+      ],
+      "ar": [
+        "تحديد الغرض",
+        "الغرض",
+        "الاستخدام الثانوي",
+        "إعادة الاستخدام",
+        "استخدام البيانات لأغراض أخرى",
+        "البيانات الشخصية",
+        "بيانات الكتابة اليدوية"
+      ],
+      "az": [
+        "məqsədin məhdudlaşdırılması",
+        "məqsəd",
+        "ikinci dərəcəli istifadə",
+        "başqa məqsədlər",
+        "təkrar istifadə",
+        "şəxsi məlumatlar",
+        "əl yazısı məlumatları"
+      ]
+    },
+    "question": "Can handwriting data collected for screening be used for other purposes?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: use the handwriting data only for the stated purpose (screening for learning difficulties with counsellor review). Any other use, such as product analytics beyond what parents agreed to, advertising or profiling, needs a separate legal basis and fresh consent, and inferred learning-difficulty signals must never be reused for commercial purposes.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "M",
+      "D"
+    ],
+    "readiness_dimensions": [
+      "ai_policy_implementation",
+      "ai_social_inclusion"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  },
+  {
+    "id": "data-retention",
+    "topic": "Data retention",
+    "keywords": {
+      "en": [
+        "retention",
+        "data retention",
+        "how long",
+        "keep data",
+        "store data",
+        "delete",
+        "deletion",
+        "erase",
+        "storage period",
+        "retain"
+      ],
+      "ar": [
+        "الاحتفاظ بالبيانات",
+        "مدة الاحتفاظ",
+        "حذف البيانات",
+        "حذف",
+        "تخزين البيانات",
+        "كم من الوقت",
+        "محو"
+      ],
+      "az": [
+        "saxlama",
+        "məlumatların saxlanması",
+        "nə qədər",
+        "saxlamaq",
+        "silmək",
+        "silinmə",
+        "saxlama müddəti",
+        "məhv etmək"
+      ]
+    },
+    "question": "How long can a student's handwriting and screening data be kept?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: keep raw handwriting data and screening results only as long as needed for the screening and counsellor follow-up, set a written retention period, delete or anonymise the data when it ends or when consent is withdrawn, and log every deletion.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "C",
+      "PP",
+      "D"
+    ],
+    "readiness_dimensions": [
+      "digital_infrastructure_energy",
+      "ai_policy_implementation"
+    ],
+    "requires_human_decision": false,
+    "status": "draft",
+    "last_checked": null
+  }
+]

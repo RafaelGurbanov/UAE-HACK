@@ -1,0 +1,10 @@
+{"id": 1, "question": "What consent is required to process a child's personal data?"}
+{"id": 2, "question": "Can an app show targeted advertising to minors?"}
+{"id": 3, "question": "What rights does a data subject have to access or delete their personal data?"}
+{"id": 4, "question": "Can personal data be transferred to a cloud provider outside the country?"}
+{"id": 5, "question": "Is a decision based solely on automated processing allowed, and can a person ask for human review?"}
+{"id": 6, "question": "What must a controller do after a personal data breach?"}
+{"id": 7, "question": "ما الموافقة المطلوبة لمعالجة البيانات الشخصية للطفل؟"}
+{"id": 8, "question": "What are the penalties for violating these rules?"}
+{"id": 9, "question": "What is the speed limit on Sheikh Zayed Road?", "expect_refusal": true}
+{"id": 10, "question": "Who won the football world cup in 2022?", "expect_refusal": true}

@@ -1,0 +1,3 @@
+{"id":"q001","language":"en","question":"What consent is required to process a child's personal data?","expected":[{"doc_id":"TO_FILL","article":"TO_FILL"}],"expect_refusal":false,"domains":["children_data","consent"]}
+{"id":"q002","language":"ar","question":"ما الموافقة المطلوبة لمعالجة البيانات الشخصية للطفل؟","expected":[{"doc_id":"TO_FILL","article":"TO_FILL"}],"expect_refusal":false,"domains":["children_data","consent"]}
+{"id":"q003","language":"en","question":"What is the speed limit on Sheikh Zayed Road?","expected":[],"expect_refusal":true,"domains":[]}

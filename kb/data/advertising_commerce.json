@@ -1,0 +1,143 @@
+[
+  {
+    "id": "advertising-to-minors",
+    "topic": "Advertising to minors",
+    "keywords": {
+      "en": [
+        "ads",
+        "advertising",
+        "advertisement",
+        "targeted ads",
+        "targeted advertising",
+        "show ads",
+        "marketing",
+        "profiling",
+        "minors",
+        "children",
+        "kids",
+        "students",
+        "app",
+        "advertisers",
+        "sell data",
+        "sell pen data"
+      ],
+      "ar": [
+        "إعلانات",
+        "الإعلانات",
+        "إعلان",
+        "الإعلان",
+        "إعلانات موجهة",
+        "التسويق",
+        "التنميط",
+        "القاصرين",
+        "قاصر",
+        "الأطفال",
+        "تطبيق"
+      ],
+      "az": [
+        "reklam",
+        "reklamlar",
+        "hədəfli reklam",
+        "marketinq",
+        "profilləşdirmə",
+        "azyaşlılar",
+        "azyaşlılara",
+        "uşaqlar",
+        "uşaqlara",
+        "tətbiq"
+      ]
+    },
+    "question": "Can an app show targeted ads to minors?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: the companion app should not show targeted advertising to students, and must never use personal data or inferred signals (such as possible dyslexia or dysgraphia) to target ads. Any advertising to minors should be non-personalised, clearly labelled and reviewed under consumer-protection and data-protection rules.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      },
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "global_example",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "M",
+      "D",
+      "SINK"
+    ],
+    "readiness_dimensions": [
+      "ai_social_inclusion",
+      "ai_policy_implementation"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  },
+  {
+    "id": "in-app-purchases",
+    "topic": "In-app purchases",
+    "keywords": {
+      "en": [
+        "in-app purchases",
+        "in app purchase",
+        "purchases",
+        "buy",
+        "spending",
+        "payments",
+        "paid features",
+        "dark patterns",
+        "pressure to buy",
+        "students spend money"
+      ],
+      "ar": [
+        "المشتريات داخل التطبيق",
+        "مشتريات",
+        "الشراء",
+        "إنفاق",
+        "مدفوعات",
+        "الأنماط المظلمة",
+        "الدفع"
+      ],
+      "az": [
+        "tətbiqdaxili alışlar",
+        "alış",
+        "alışlar",
+        "satınalma",
+        "xərcləmək",
+        "ödənişlər",
+        "qaranlıq nümunələr",
+        "pul xərcləmək"
+      ]
+    },
+    "question": "Are in-app purchases aimed at students allowed in the companion app?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: purchases must not be promoted to students inside the screening app; any paid feature should require a parent's explicit approval, show clear prices, avoid dark patterns and pressure tactics, and allow refunds. Promotion to students should be escalated to the education and consumer-protection authorities.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "SINK",
+      "D"
+    ],
+    "readiness_dimensions": [
+      "ai_social_inclusion",
+      "generative_ai_content_ecosystem"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  }
+]

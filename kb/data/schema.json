@@ -1,0 +1,214 @@
+{
+  "$defs": {
+    "DataCitation": {
+      "additionalProperties": false,
+      "properties": {
+        "law": {
+          "description": "Official law/document title, or \"SOURCE TO BE VERIFIED\"",
+          "minLength": 1,
+          "title": "Law",
+          "type": "string"
+        },
+        "article": {
+          "description": "Article / clause, or \"SOURCE TO BE VERIFIED\"",
+          "minLength": 1,
+          "title": "Article",
+          "type": "string"
+        },
+        "layer": {
+          "$ref": "#/$defs/KBLayer"
+        },
+        "url": {
+          "default": "",
+          "description": "Official URL; empty until verified",
+          "title": "Url",
+          "type": "string"
+        },
+        "quote": {
+          "description": "Exact quote from the official text, or \"SOURCE TO BE VERIFIED\"",
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "verified": {
+          "default": false,
+          "description": "true ONLY after a person checked law, article and quote against the official source",
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "law",
+        "article",
+        "layer",
+        "quote"
+      ],
+      "title": "DataCitation",
+      "type": "object"
+    },
+    "DataEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Unique, stable id (lowercase, digits, _ or -)",
+          "pattern": "^[a-z0-9][a-z0-9_\\-]{2,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "topic": {
+          "minLength": 2,
+          "title": "Topic",
+          "type": "string"
+        },
+        "keywords": {
+          "$ref": "#/$defs/Keywords"
+        },
+        "question": {
+          "description": "The canonical question this entry answers",
+          "minLength": 5,
+          "title": "Question",
+          "type": "string"
+        },
+        "answer": {
+          "minLength": 10,
+          "title": "Answer",
+          "type": "string"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/DataCitation"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "pipeline_nodes": {
+          "items": {
+            "$ref": "#/$defs/PipelineNode"
+          },
+          "title": "Pipeline Nodes",
+          "type": "array"
+        },
+        "readiness_dimensions": {
+          "items": {
+            "$ref": "#/$defs/ReadinessDimension"
+          },
+          "title": "Readiness Dimensions",
+          "type": "array"
+        },
+        "requires_human_decision": {
+          "default": false,
+          "title": "Requires Human Decision",
+          "type": "boolean"
+        },
+        "status": {
+          "default": "draft",
+          "description": "Editorial status of this entry. 'retired' entries are never returned.",
+          "enum": [
+            "draft",
+            "reviewed",
+            "approved",
+            "retired"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "last_checked": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Date the entry was last checked (YYYY-MM-DD)",
+          "title": "Last Checked"
+        }
+      },
+      "required": [
+        "id",
+        "topic",
+        "keywords",
+        "question",
+        "answer"
+      ],
+      "title": "DataEntry",
+      "type": "object"
+    },
+    "KBLayer": {
+      "enum": [
+        "uae_federal",
+        "emirate",
+        "global_example"
+      ],
+      "title": "KBLayer",
+      "type": "string"
+    },
+    "Keywords": {
+      "additionalProperties": false,
+      "properties": {
+        "en": {
+          "description": "English search terms and paraphrases",
+          "items": {
+            "type": "string"
+          },
+          "title": "En",
+          "type": "array"
+        },
+        "ar": {
+          "description": "Arabic search terms and paraphrases",
+          "items": {
+            "type": "string"
+          },
+          "title": "Ar",
+          "type": "array"
+        },
+        "az": {
+          "description": "Azerbaijani search terms and paraphrases",
+          "items": {
+            "type": "string"
+          },
+          "title": "Az",
+          "type": "array"
+        }
+      },
+      "title": "Keywords",
+      "type": "object"
+    },
+    "PipelineNode": {
+      "enum": [
+        "SRC",
+        "C",
+        "PP",
+        "M",
+        "P",
+        "D",
+        "SINK"
+      ],
+      "title": "PipelineNode",
+      "type": "string"
+    },
+    "ReadinessDimension": {
+      "enum": [
+        "open_data_open_source",
+        "generative_ai_content_ecosystem",
+        "contextualisation_regional_development",
+        "domain_integration_cross_domain",
+        "human_interaction_supervision",
+        "ai_policy_implementation",
+        "ai_social_inclusion",
+        "digital_infrastructure_energy"
+      ],
+      "title": "ReadinessDimension",
+      "type": "string"
+    }
+  },
+  "items": {
+    "$ref": "#/$defs/DataEntry"
+  },
+  "type": "array",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Qalam knowledge-base data file (a list of entries)"
+}

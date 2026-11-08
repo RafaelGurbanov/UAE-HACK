@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cross-border-transfer",
+    "topic": "Cross-border transfer",
+    "keywords": {
+      "en": [
+        "cross-border",
+        "cross border transfer",
+        "transfer abroad",
+        "outside the country",
+        "cloud abroad",
+        "foreign server",
+        "data localisation",
+        "data localization",
+        "international transfer",
+        "transfer",
+        "cloud"
+      ],
+      "ar": [
+        "النقل عبر الحدود",
+        "نقل البيانات",
+        "خارج الدولة",
+        "السحابة",
+        "خادم أجنبي",
+        "توطين البيانات",
+        "النقل الدولي"
+      ],
+      "az": [
+        "sərhədlərarası ötürmə",
+        "ötürmə",
+        "xaricə ötürmə",
+        "ölkə xaricində",
+        "bulud",
+        "xarici server",
+        "məlumatların lokallaşdırılması",
+        "beynəlxalq ötürmə"
+      ]
+    },
+    "question": "Can students' personal data be transferred to a cloud provider outside the country?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: only transfer students' data abroad if the destination offers an adequate level of protection or another approved safeguard applies, tell parents where data is processed, minimise and pseudonymise what is sent, and record the transfer decision for audit.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "D"
+    ],
+    "readiness_dimensions": [
+      "digital_infrastructure_energy",
+      "ai_policy_implementation"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  }
+]

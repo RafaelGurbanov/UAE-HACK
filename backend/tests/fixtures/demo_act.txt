@@ -1,0 +1,20 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL LAW. Demo Children's Data Act (test fixture)
+
+Chapter 1 General Provisions
+
+Article 1 Definitions
+In this Act, "child" means any natural person under eighteen years of age, and "controller" means the person who decides the purposes of processing.
+
+Article 2 Consent for processing a child's data
+A controller shall not process the personal data of a child unless verifiable consent has been given by the child's parent or legal guardian. The consent shall be specific, informed and recorded.
+
+Article 3 Advertising to children
+A controller shall not use the personal data of a child, or any characteristic inferred from it, for targeted advertising or profiling for commercial purposes.
+
+Chapter 2 Transfers
+
+Article 4 Cross-border transfer
+Personal data of a child shall not be transferred outside the State unless the receiving country ensures an adequate level of protection, as determined by the competent authority.
+
+Article 5 Penalties
+Whoever violates Article 2 or Article 3 shall be liable to an administrative fine determined by the competent authority.

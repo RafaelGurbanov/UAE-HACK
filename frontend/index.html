@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Qalam Policy Command Centre: AI legal and policy advisory demo for the UAE (ITU AI for Good Lab Hackathon). Informational only, not legal advice." />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070912'/><path d='M9 23l3-1 10-10-2-2-10 10z' fill='%232dd4bf'/></svg>" />
+    <title>Qalam Policy Command Centre</title>
+    <script>
+      // Apply saved/OS theme and language before first paint (no flash, no layout shift).
+      (function () {
+        var s = {};
+        try { s = JSON.parse(localStorage.getItem('qalam-ui') || '{}'); } catch (e) {}
+        var theme = s.theme || (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        var lang = s.lang || 'en';
+        var el = document.documentElement;
+        el.dataset.theme = theme; el.lang = lang; el.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This demo needs JavaScript.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

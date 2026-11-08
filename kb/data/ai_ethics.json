@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ai-ethics-oversight",
+    "topic": "AI ethics oversight",
+    "keywords": {
+      "en": [
+        "ai ethics",
+        "ethics oversight",
+        "oversight",
+        "sanction",
+        "remediation",
+        "referral",
+        "inferred disability",
+        "disability signals",
+        "breach",
+        "escalation",
+        "regulator"
+      ],
+      "ar": [
+        "أخلاقيات الذكاء الاصطناعي",
+        "الرقابة",
+        "عقوبة",
+        "معالجة الأضرار",
+        "إحالة",
+        "إعاقة مستنتجة",
+        "خرق",
+        "تصعيد",
+        "الجهة التنظيمية"
+      ],
+      "az": [
+        "süni intellekt etikası",
+        "etik nəzarət",
+        "nəzarət",
+        "sanksiya",
+        "aradan qaldırma",
+        "göndərmə",
+        "ehtimal olunan əlillik",
+        "pozuntu",
+        "eskalasiya",
+        "tənzimləyici"
+      ]
+    },
+    "question": "When should a case be referred to national AI ethics oversight?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: refer the case when an AI system is misused in a way that harms children, for example targeting ads using inferred disability signals. Stop the processing, preserve the audit log, notify the data-protection and education authorities, and refer the provider to AI ethics oversight for sanction and remediation. The final decision rests with the regulator.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "uae_federal",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "M",
+      "P",
+      "D"
+    ],
+    "readiness_dimensions": [
+      "ai_policy_implementation",
+      "human_interaction_supervision"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  }
+]

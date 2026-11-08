@@ -1,0 +1,135 @@
+# Offline scenario: every agent output comes from these LOCAL RULES plus a search of kb/data.
+# No LLM is called. Each agent only receives the events listed in `visible_to`.
+# `query` is what the agent searches the knowledge base for; if nothing matches,
+# the agent says "No supporting source found in the knowledge base".
+# `stance` is used to detect conflicts between agents (see app/scenarios/engine.py).
+# All data is SYNTHETIC.
+id: inapp_purchases_escalation
+title: "Smart pen national rollout: in-app purchases to inferred-disability ad targeting"
+description: >
+  The smart-pen learning-difficulty screening service scales nationally. Monetisation
+  practices escalate from a consumer-protection issue to a children's-data and AI-ethics breach.
+controversial: false
+events:
+  - id: e1_rollout
+    step: 1
+    at: "T+0"
+    title: "National deployment"
+    description: "The smart classroom solution is deployed nationally and becomes very popular with middle-school students."
+    severity: info
+    visible_to: [data_protection, education, consumer_protection, ai_ethics]
+    pipeline_nodes: [SRC, C, PP, M, P, D, SINK]
+    assessments:
+      data_protection:
+        query: "What consent is required to process a child's personal data?"
+        stance: monitor
+        recommendation: "Confirm recorded parental consent exists for every enrolled student before data collection starts."
+        confidence: 0.75
+      education:
+        query: "Must a counsellor review a screening flag before parents are told?"
+        stance: monitor
+        recommendation: "Verify that every school has trained counsellors assigned to review flags before rollout continues."
+        confidence: 0.8
+      consumer_protection:
+        query: "Are in-app purchases aimed at students allowed in the companion app?"
+        stance: monitor
+        recommendation: "Review the companion app for commercial features aimed at students."
+        confidence: 0.6
+      ai_ethics:
+        query: "When should a case be referred to national AI ethics oversight?"
+        stance: monitor
+        recommendation: "Register the deployment for periodic AI ethics review; no action needed yet."
+        confidence: 0.6
+    coordinator:
+      recommendation: "Proceed with the rollout under monitoring. Consent records and counsellor coverage are checked first."
+      actions: ["Audit consent records", "Confirm counsellor coverage per school", "Schedule a 6-month review"]
+      requires_human_decision: false
+
+  - id: e2_iap
+    step: 2
+    at: "T+6 months"
+    title: "In-app purchases promoted to students"
+    description: "The education department notices the provider promoting in-app purchases in the companion app; students spend significant money."
+    severity: warning
+    visible_to: [education, consumer_protection]
+    pipeline_nodes: [SINK, D]
+    assessments:
+      education:
+        query: "Are in-app purchases aimed at students allowed in the companion app?"
+        stance: suspend
+        recommendation: "Suspend all commercial features in school deployments until the provider fixes them."
+        confidence: 0.7
+      consumer_protection:
+        query: "Are in-app purchases aimed at students allowed in the companion app?"
+        stance: restrict
+        recommendation: "Keep the feature but require explicit parental approval, clear prices and refunds; ban promotion to students."
+        confidence: 0.75
+    coordinator:
+      recommendation: "Stop promotion of purchases to students immediately; decide between suspension and parental-approval controls."
+      actions: ["Order the provider to stop promoting purchases to students", "Require parental approval for any purchase", "Offer refunds for purchases by students"]
+      requires_human_decision: true
+
+  - id: e3_monitoring
+    step: 3
+    at: "T+6.5 months"
+    title: "Monitoring under agreed rules"
+    description: "Agencies monitor the situation and discuss actions strictly under pre-agreed knowledge-base policies."
+    severity: warning
+    visible_to: [data_protection, education, consumer_protection]
+    pipeline_nodes: [P, D, SINK]
+    assessments:
+      data_protection:
+        query: "Can handwriting data collected for screening be used for other purposes?"
+        stance: monitor
+        recommendation: "Check that handwriting data is used only for screening (purpose limitation) while commerce is reviewed."
+        confidence: 0.7
+      education:
+        query: "Must a counsellor review a screening flag before parents are told?"
+        stance: monitor
+        recommendation: "Continue screening with counsellor review; report weekly on commercial prompts seen by students."
+        confidence: 0.7
+      consumer_protection:
+        query: "Are in-app purchases aimed at students allowed in the companion app?"
+        stance: monitor
+        recommendation: "Monitor purchase prompts and spending reports under the agreed consumer rules."
+        confidence: 0.7
+    coordinator:
+      recommendation: "Continue monitoring under the agreed rules; no new action until the next report."
+      actions: ["Weekly monitoring report", "Escalate immediately if personal data is used for marketing"]
+      requires_human_decision: false
+
+  - id: e4_inferred_ads
+    step: 4
+    at: "T+7 months"
+    title: "Targeted ads from inferred disability signals"
+    description: "Monitoring agencies observe advertisements targeted at students using inferred dyslexia/dysgraphia signals from the handwriting models."
+    severity: critical
+    visible_to: [data_protection, ai_ethics, consumer_protection]
+    pipeline_nodes: [M, D, SINK]
+    assessments:
+      data_protection:
+        query: "Can handwriting data collected for screening be used for other purposes?"
+        stance: prohibit
+        recommendation: "Prohibit any use of inferred disability signals for advertising; enforce consent and purpose limitation for children's data."
+        confidence: 0.9
+      ai_ethics:
+        query: "When should a case be referred to national AI ethics oversight?"
+        stance: refer
+        recommendation: "Refer the provider to national AI ethics oversight for sanction and remediation."
+        confidence: 0.85
+      consumer_protection:
+        query: "Can an app show targeted ads to minors?"
+        stance: prohibit
+        recommendation: "Order the targeted ads to stop immediately; no advertising to minors based on personal or inferred data."
+        confidence: 0.85
+    coordinator:
+      recommendation: "Privacy and ethics breach: stop the targeting now and refer the provider for sanction. Final decision rests with the regulator."
+      actions:
+        - "Prohibit use of inferred disability signals for advertising"
+        - "Enforce consent and purpose limitation for children's data"
+        - "Refer to national AI ethics oversight for sanction and remediation"
+      requires_human_decision: true
+    expected_handling:
+      - prohibit use of inferred disability signals for advertising
+      - enforce consent and purpose limitation for children's data
+      - refer to national AI ethics oversight for sanction and remediation

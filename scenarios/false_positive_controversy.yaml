@@ -1,0 +1,72 @@
+# Offline controversy scenario (local rules + kb/data search, no LLM). All data is SYNTHETIC.
+id: false_positive_controversy
+title: "False-positive flag, parental refusal and cloud transfer abroad"
+description: "The screening itself becomes controversial: a wrong flag, parents refusing consent, and data moved abroad."
+controversial: true
+events:
+  - id: c1_false_positive
+    step: 1
+    at: "T+0"
+    title: "False-positive flag"
+    description: "A synthetic student is flagged; the counsellor finds no difficulty, but a teacher already saw the flag in the app."
+    severity: warning
+    visible_to: [education, ai_ethics]
+    pipeline_nodes: [M, P, SINK]
+    assessments:
+      education:
+        query: "Must a counsellor review a screening flag before parents are told?"
+        stance: pause
+        recommendation: "Pause showing flags to teachers until the counsellor has reviewed them; correct the record for this student."
+        confidence: 0.8
+      ai_ethics:
+        query: "What false positive rate and bias testing standard applies to handwriting screening models?"
+        stance: proceed
+        recommendation: "Keep screening running, but commission an accuracy and bias audit across Arabic and English handwriting."
+        confidence: 0.55
+    coordinator:
+      recommendation: "A flag reached a teacher before counsellor review: fix the app so flags are visible only after review, and audit model accuracy."
+      actions: ["Hide unreviewed flags from teachers", "Correct the affected student's record", "Commission an accuracy and bias audit"]
+      requires_human_decision: true
+
+  - id: c2_parental_refusal
+    step: 2
+    at: "T+2 weeks"
+    title: "Parents refuse consent"
+    description: "Several parents refuse consent and ask for existing data to be deleted."
+    severity: warning
+    visible_to: [data_protection, education]
+    pipeline_nodes: [SRC, D]
+    assessments:
+      data_protection:
+        query: "What consent is required to process a child's personal data?"
+        stance: prohibit
+        recommendation: "Stop processing for these students and delete their data under the retention rules; log each deletion."
+        confidence: 0.85
+      education:
+        query: "How long can a student's handwriting and screening data be kept?"
+        stance: restrict
+        recommendation: "Offer these students a traditional, non-AI assessment so they are not disadvantaged."
+        confidence: 0.7
+    coordinator:
+      recommendation: "Respect the refusals: stop processing, delete the data, and offer an alternative assessment."
+      actions: ["Stop processing for refusing families", "Delete stored data and log deletions", "Offer a non-AI assessment"]
+      requires_human_decision: true
+
+  - id: c3_cross_border
+    step: 3
+    at: "T+1 month"
+    title: "Cloud processing abroad"
+    description: "The provider moves analytics to a data centre outside the UAE without telling schools."
+    severity: critical
+    visible_to: [data_protection]
+    pipeline_nodes: [D]
+    assessments:
+      data_protection:
+        query: "Can students' personal data be transferred to a cloud provider outside the country?"
+        stance: pause
+        recommendation: "Pause the transfer until an adequacy decision or approved safeguard is confirmed; inform parents where data is processed."
+        confidence: 0.8
+    coordinator:
+      recommendation: "Unannounced transfer abroad: pause it and require the provider to document safeguards before resuming."
+      actions: ["Pause cross-border transfer", "Require documented safeguards", "Notify schools and parents"]
+      requires_human_decision: true

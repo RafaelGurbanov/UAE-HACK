@@ -1,0 +1,67 @@
+[
+  {
+    "id": "counsellor-review",
+    "topic": "Counsellor review",
+    "keywords": {
+      "en": [
+        "counsellor",
+        "counselor",
+        "review",
+        "human review",
+        "human in the loop",
+        "flag",
+        "screening flag",
+        "before parents are told",
+        "automated decision",
+        "approve",
+        "override",
+        "check",
+        "check the flag"
+      ],
+      "ar": [
+        "المرشد",
+        "مراجعة المرشد",
+        "المراجعة البشرية",
+        "مؤشر",
+        "إبلاغ الوالدين",
+        "قرار آلي",
+        "اعتماد"
+      ],
+      "az": [
+        "məsləhətçi",
+        "psixoloq",
+        "nəzərdən keçirmə",
+        "insan nəzarəti",
+        "bayraq",
+        "siqnal",
+        "valideynlərə bildirmək",
+        "avtomatlaşdırılmış qərar",
+        "təsdiq"
+      ]
+    },
+    "question": "Must a counsellor review a screening flag before parents or the student are told?",
+    "answer": "Draft guidance, to be confirmed against verified UAE sources: yes. A trained counsellor must review every flag produced by the handwriting models before anything is shared with parents or the student; the counsellor can approve, override or escalate, and each decision is logged. No automated decision about a child is final without this human review.",
+    "citations": [
+      {
+        "law": "SOURCE TO BE VERIFIED",
+        "article": "SOURCE TO BE VERIFIED",
+        "layer": "emirate",
+        "url": "",
+        "quote": "SOURCE TO BE VERIFIED",
+        "verified": false
+      }
+    ],
+    "pipeline_nodes": [
+      "M",
+      "P",
+      "SINK"
+    ],
+    "readiness_dimensions": [
+      "human_interaction_supervision",
+      "ai_social_inclusion"
+    ],
+    "requires_human_decision": true,
+    "status": "draft",
+    "last_checked": null
+  }
+]
