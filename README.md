@@ -2,7 +2,6 @@
 
 AI legal and policy advisory platform for the UAE, built for the **ITU AI for Good Lab Hackathon: United Arab Emirates (8 Dec 2026)**.
 It is the governance layer around a smart-pen learning-difficulty screening service:
-- E-QANUN-style legal search with verified citations
 - specialist regulator agents and a Coordinator
 - progressive scenario simulation
 - policy-gap analysis against global examples
